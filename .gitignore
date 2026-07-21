@@ -1,0 +1,42 @@
+# ==========================================
+# Python & Environment
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# ==========================================
+# Large Files & Dataset (JANGAN DIPUSH KE GITHUB)
+# ==========================================
+# Folder dataset lokal (mencapai ratusan MB / GB)
+Final Dataset/
+data/
+
+# Model ML/DL berukuran besar (.h5, .pkl, .pt, .onnx)
+*.h5
+*.hdf5
+*.keras
+*.pkl
+*.onnx
+
+# Folder penampungan upload sementara di Flask
+uploads/*
+!uploads/.gitkeep
+
+# ==========================================
+# System & IDE Specific
+# ==========================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Environment Variables & Secrets
+# ==========================================
+.env
+*.secret

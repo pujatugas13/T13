@@ -14,10 +14,11 @@ env/
 # ==========================================
 # Folder dataset lokal (mencapai ratusan MB / GB)
 Final Dataset/
+dataset/
 data/
 
 # Model ML/DL berukuran besar (.h5, .pkl, .pt, .onnx)
-*.h5
+# *.h5
 *.hdf5
 *.keras
 *.pkl

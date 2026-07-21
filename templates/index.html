@@ -15,16 +15,25 @@
         }
 
         body {
-            background-color: var(--bg-cream);
+            /* Background Gambar Jalan Raya dari Unsplash + Overlay Kegelapan */
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                        url("{{ url_for('static', filename='traffic.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             color: var(--dark-text);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
         }
 
+        /* Effect Card Transparan + Glassmorphism Blur */
         .main-card {
-            background-color: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            background: rgba(254, 254, 242, 0.88); /* Warna cream transparan */
+            backdrop-filter: blur(12px);            /* Efek Blur pada background */
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             border: 2px solid var(--main-slate);
             overflow: hidden;
         }
@@ -42,7 +51,7 @@
             font-weight: 700;
             border: none;
             padding: 12px;
-            border-radius: 8px;
+            border-radius: 10px;
             transition: all 0.3s ease;
         }
 
@@ -50,13 +59,15 @@
             background-color: #e5c94c;
             color: var(--dark-text);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(242, 217, 101, 0.4);
         }
 
         .result-box {
-            background-color: var(--bg-cream);
+            background-color: rgba(255, 255, 255, 0.9);
             border-left: 6px solid var(--accent-yellow);
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 18px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
         .badge-confidence {
@@ -76,13 +87,13 @@
                         <p class="mb-0 text-white-50 fs-6">Transfer Learning MobileNetV2</p>
                     </div>
                     
-                    <div class="card-body p-4">
+                    <div class="card-body p-4 p-md-5">
                         <form action="/" method="post" enctype="multipart/form-data">
                             <div class="mb-4">
                                 <label for="file" class="form-label fw-bold">Unggah Gambar Jalan Raya</label>
                                 <input class="form-control border-2" type="file" id="file" name="file" accept="image/*" required>
                             </div>
-                            <button type="submit" class="btn btn-custom w-100">Analisis Gambar</button>
+                            <button type="submit" class="btn btn-custom w-100 fs-6">Analisis Gambar</button>
                         </form>
 
                         {% if label %}
